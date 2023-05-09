@@ -14,6 +14,7 @@ import it.epicode.auth.payload.LoginDto;
 import it.epicode.auth.payload.RegisterDto;
 import it.epicode.auth.service.AuthService;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
