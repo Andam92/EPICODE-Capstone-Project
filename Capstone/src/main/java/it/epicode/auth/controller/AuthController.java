@@ -2,6 +2,7 @@ package  it.epicode.auth.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +13,6 @@ import it.epicode.auth.payload.JWTAuthResponse;
 import it.epicode.auth.payload.LoginDto;
 import it.epicode.auth.payload.RegisterDto;
 import it.epicode.auth.service.AuthService;
-
 
 @RestController
 @RequestMapping("/api/auth")
