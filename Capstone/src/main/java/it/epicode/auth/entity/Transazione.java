@@ -1,4 +1,4 @@
-package it.epicode.capstone.model;
+package it.epicode.auth.entity;
 
 import java.time.LocalDate;
 import java.util.List;

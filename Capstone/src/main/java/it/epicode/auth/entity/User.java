@@ -11,9 +11,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import it.epicode.capstone.model.Transazione;
-import it.epicode.capstone.model.Videogioco;
-
 
 @Setter
 @Getter
@@ -29,8 +26,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String surname;
-    private String stato;
     @Column(nullable = false, unique = true)
     private String username;
     @Column(nullable = false, unique = true)

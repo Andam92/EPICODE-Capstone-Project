@@ -22,7 +22,7 @@ public class Runner implements ApplicationRunner {
 		
 		User c = userProvider.getObject();
 		//clienteServ.salvaCliente(c);
-		System.out.println(c.getEmail());
+		//System.out.println(c.getEmail());
 
 	}
 
