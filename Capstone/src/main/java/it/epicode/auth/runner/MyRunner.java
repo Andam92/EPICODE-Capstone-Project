@@ -24,7 +24,7 @@ public class MyRunner implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 
 		// Creo videogiochi
-		Videogioco God_of_War = config.creaVideogioco("God of War", "https://drive.google.com/file/d/1Z9EDmj_HDxH5phPDWpnK9nbqY292_q86/view?usp=share_link", Categoria.NARRATIVO, "PlayStation", "SantaMonica",
+		Videogioco God_of_War = config.creaVideogioco("God of War", "https://drive.google.com/u/0/uc?id=1Z9EDmj_HDxH5phPDWpnK9nbqY292_q86&export=download", Categoria.NARRATIVO, "PlayStation", "SantaMonica",
 				LocalDate.of(2022, 01, 14), 59.99);
 		Videogioco Spider_Man = config.creaVideogioco("Marvel's Spider-Man", null, Categoria.AZIONE, "PlayStation",
 				"InsomniacGames", LocalDate.of(2022, 8, 12), 59.99);
