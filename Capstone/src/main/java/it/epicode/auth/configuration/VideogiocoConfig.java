@@ -17,8 +17,8 @@ public class VideogiocoConfig {
 	
 	@Bean
 	@Scope("prototype")
-	public Videogioco creaVideogioco(String titolo, Categoria categoria, String editore, String casaProduzione, LocalDate dataPubblicazione, Double prezzo) {
-		Videogioco v = new Videogioco(titolo, categoria, editore, casaProduzione, dataPubblicazione, prezzo);
+	public Videogioco creaVideogioco(String titolo, String immagine, Categoria categoria, String editore, String casaProduzione, LocalDate dataPubblicazione, Double prezzo) {
+		Videogioco v = new Videogioco(titolo, immagine, categoria, editore, casaProduzione, dataPubblicazione, prezzo);
 		return v;
 	}
 	

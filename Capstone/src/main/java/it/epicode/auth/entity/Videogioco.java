@@ -27,6 +27,7 @@ public class Videogioco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String titolo;
+	private String immagine;
 	@Enumerated(EnumType.STRING)
 	private Categoria categoria;
 	private String editore;
@@ -34,10 +35,11 @@ public class Videogioco {
 	LocalDate dataPubblicazione;
 	Double prezzo;
 		
-	public Videogioco(String titolo, Categoria categoria, String editore, String casaProduzione,
+	public Videogioco(String titolo, String immagine, Categoria categoria, String editore, String casaProduzione,
 			LocalDate dataPubblicazione, Double prezzo) {
 		super();
 		this.titolo = titolo;
+		this.immagine = immagine;
 		this.categoria = categoria;
 		this.editore = editore;
 		this.casaProduzione = casaProduzione;
