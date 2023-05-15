@@ -24,15 +24,15 @@ public class MyRunner implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 
 		// Creo videogiochi
-		Videogioco God_of_War = config.creaVideogioco("God of War", "https://drive.google.com/u/0/uc?id=1Z9EDmj_HDxH5phPDWpnK9nbqY292_q86&export=download", Categoria.NARRATIVO, "PlayStation", "SantaMonica",
+		Videogioco God_of_War = config.creaVideogioco("God of War", "https://drive.google.com/u/0/uc?id=1LhTcPJ-K9Fetro3gIPwAQpwiETgzjTgk", Categoria.NARRATIVO, "PlayStation", "SantaMonica",
 				LocalDate.of(2022, 01, 14), 59.99);
-		Videogioco Spider_Man = config.creaVideogioco("Marvel's Spider-Man", null, Categoria.AZIONE, "PlayStation",
+		Videogioco Spider_Man = config.creaVideogioco("Marvel's Spider-Man", "https://drive.google.com/u/0/uc?id=14cr4fD05jAWM3ISVsP5p-4-c8HdCjEBK", Categoria.AZIONE, "PlayStation",
 				"InsomniacGames", LocalDate.of(2022, 8, 12), 59.99);
-		Videogioco Deep_Rock_Galactic = config.creaVideogioco("Deep Rock Galactic", null, Categoria.FPS,
+		Videogioco Deep_Rock_Galactic = config.creaVideogioco("Deep Rock Galactic", "https://drive.google.com/u/0/uc?id=1WHlTQAICu4Ge7WBHbPYNpjfO53-2DXdr", Categoria.FPS,
 				"Coffee Stain Publishing", "Ghost Ship Games", LocalDate.of(2020, 05, 13), 29.99);
-		Videogioco Total_War_Warhammer_3 = config.creaVideogioco("Total War: WARHAMMER III", null, Categoria.STRATEGIA,
+		Videogioco Total_War_Warhammer_3 = config.creaVideogioco("Total War: WARHAMMER III", "https://drive.google.com/u/0/uc?id=1kxCpUR1Rl7KwgFDn1V3bs3YmTMf6nJLZ", Categoria.STRATEGIA,
 				"SEGA", "Creative Assembly", LocalDate.of(2022, 02, 17), 59.99);
-		Videogioco Among_Us = config.creaVideogioco("Among Us", null, Categoria.MULTIPLAYER, "Innersloth", "Innersloth",
+		Videogioco Among_Us = config.creaVideogioco("Among Us", "https://drive.google.com/u/0/uc?id=1jPu6damkHYGoHuMaXlTfEYP-qOv99816", Categoria.MULTIPLAYER, "Innersloth", "Innersloth",
 				LocalDate.of(2018, 11, 16), 4.49);
 
 		// Salvo nel db
