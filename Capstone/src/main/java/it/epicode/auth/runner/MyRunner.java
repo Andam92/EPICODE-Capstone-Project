@@ -36,11 +36,11 @@ public class MyRunner implements ApplicationRunner {
 				LocalDate.of(2018, 11, 16), 4.49);
 
 		// Salvo nel db
-	service.addVideogioco(God_of_War);
-	service.addVideogioco(Spider_Man);
-	service.addVideogioco(Deep_Rock_Galactic);
-	service.addVideogioco(Total_War_Warhammer_3);
-	service.addVideogioco(Among_Us);
+//	service.addVideogioco(God_of_War);
+//	service.addVideogioco(Spider_Man);
+//	service.addVideogioco(Deep_Rock_Galactic);
+//	service.addVideogioco(Total_War_Warhammer_3);
+//	service.addVideogioco(Among_Us);
 
 		// Elimino
 		// service.deleteVideogioco(v);

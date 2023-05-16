@@ -25,6 +25,10 @@ public class VideogiocoService {
 		} else return repo.findAll();
 	}
 	
+	public Videogioco findByID(Long id) {
+		return repo.findById(id).get();
+	}
+	
 	public String deleteVideogiocoByID(Videogioco v) {
 		if (repo.existsById(v.getId())){
 			repo.deleteById(v.getId());
