@@ -20,9 +20,7 @@ public class VideogiocoService {
 	}
 	
 	public List<Videogioco> findAll(){
-		if(repo.findAll().size() == 0) {
-			throw new EntityNotFoundException("Lista vuota");
-		} else return repo.findAll();
+		 return repo.findAll();
 	}
 	
 	public Videogioco findByID(Long id) {

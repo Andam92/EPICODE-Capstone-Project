@@ -44,6 +44,9 @@ public class MyRunner implements ApplicationRunner {
 				LocalDate.of(2020, 6, 18), 22.99);
 		Videogioco Kingdom_Come = config.creaVideogioco("Kingdome Come", "https://drive.google.com/u/0/uc?id=1Sn2a_Q4wTHxO00jkuhODG8OmdkXd4kKg", Categoria.RPG, "Warhorse Studios", "Warhorse Studios ",
 				LocalDate.of(2018, 2, 18), 29.99);
+		Videogioco Hogwarts_Legacy = config.creaVideogioco("Hogwarts Legacy", "https://drive.google.com/u/0/uc?id=1UHSLx2zqnPfQx62l0pk-ikjZu849-CLa", Categoria.RPG, "Warner Bros. Games", 
+				"Avalanche Software ",
+				LocalDate.of(2023, 2, 10), 59.99);
 		
 		
 		
@@ -60,6 +63,7 @@ public class MyRunner implements ApplicationRunner {
 			service.addVideogioco(Mount_Blade_Bannerlord);
 			service.addVideogioco(Outer_Wilds);
 			service.addVideogioco(Kingdom_Come);
+			service.addVideogioco(Hogwarts_Legacy);
 		}
 		
 	}
