@@ -25,7 +25,7 @@ public class UserController {
 	
 	@Autowired UserService service;
 	
-	@PostMapping("/add-to/{id}")
+	@PostMapping("/add/{id}")
 	@PreAuthorize("hasRole('USER')")
 	public ResponseEntity<?> addToLibrary(@PathVariable Long id, @RequestBody List<Videogioco> carrello){
 		try {
