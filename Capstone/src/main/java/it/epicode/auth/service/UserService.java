@@ -9,6 +9,7 @@ import it.epicode.auth.entity.User;
 import it.epicode.auth.entity.Videogioco;
 import it.epicode.auth.repository.UserRepository;
 import it.epicode.auth.repository.VideogiocoRepository;
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class UserService {
@@ -16,12 +17,27 @@ public class UserService {
 	@Autowired UserRepository userRepo;
 	@Autowired VideogiocoRepository videogiocoRepo;
 	
-	public List<Videogioco> addVideogiocoToList(List<Videogioco> carrello, Long id){
+	public Videogioco addVideogiocoToList(Videogioco vg, Long id){
 		User u = userRepo.findById(id).get();
-		u.getLibreriaPersonale().addAll(carrello);
+		u.getLibreriaPersonale().add(vg);
 		userRepo.save(u);
-		return carrello;
-		
+		return vg;		
+	}
+	
+	public List<User> findAll(){
+		if(userRepo.findAll().size() > 0) {
+			return userRepo.findAll();
+		} else {
+			System.out.println("Lista utenti vuota!");
+		}
+		return null;
+	}
+	
+	public User findByUsername(String username) {
+		if(!userRepo.existsByUsername(username)) {
+			throw new EntityNotFoundException("Nessun utente con questo username");
+			} 				
+			 return userRepo.findByUsername(username).get();
+			}
 	}
 
-}

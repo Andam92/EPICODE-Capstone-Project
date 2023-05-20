@@ -1,5 +1,6 @@
 package  it.epicode.auth.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,11 +14,14 @@ import it.epicode.auth.payload.JWTAuthResponse;
 import it.epicode.auth.payload.LoginDto;
 import it.epicode.auth.payload.RegisterDto;
 import it.epicode.auth.service.AuthService;
+import it.epicode.auth.service.UserService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+	
+	 @Autowired UserService userService;
 
     private AuthService authService;
 
@@ -31,7 +35,7 @@ public class AuthController {
            	
     	String token = authService.login(loginDto);
 
-        JWTAuthResponse jwtAuthResponse = new JWTAuthResponse();
+        JWTAuthResponse jwtAuthResponse = new JWTAuthResponse(); 
         jwtAuthResponse.setUsername(loginDto.getUsername());
         jwtAuthResponse.setAccessToken(token);
 
@@ -43,5 +47,10 @@ public class AuthController {
     public ResponseEntity<String> register(@RequestBody RegisterDto registerDto){
         String response = authService.register(registerDto);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+    
+    @GetMapping("/users")
+    public ResponseEntity<?> getAll(){
+    	return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
     }
 }
