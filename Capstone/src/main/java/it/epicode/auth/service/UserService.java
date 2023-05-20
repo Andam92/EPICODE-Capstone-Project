@@ -17,11 +17,11 @@ public class UserService {
 	@Autowired UserRepository userRepo;
 	@Autowired VideogiocoRepository videogiocoRepo;
 	
-	public Videogioco addVideogiocoToList(Videogioco vg, Long id){
+	public String addVideogiocoToList(List<Videogioco> carrello, Long id){
 		User u = userRepo.findById(id).get();
-		u.getLibreriaPersonale().add(vg);
+		u.getLibreriaPersonale().addAll(carrello);
 		userRepo.save(u);
-		return vg;		
+		return "Videogiochi aggiunti alla libreria";		
 	}
 	
 	public List<User> findAll(){
