@@ -32,7 +32,7 @@ public class User {
     private String email;
     @Column(nullable = false)
     private String password;
-    @ManyToMany
+    @OneToMany(fetch = FetchType.LAZY)
 	List<Videogioco> libreriaPersonale;
     @OneToMany
     List<Transazione> transazioni;
