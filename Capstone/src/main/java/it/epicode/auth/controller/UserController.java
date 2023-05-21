@@ -20,16 +20,38 @@ import it.epicode.auth.service.UserService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/checkout")
+@RequestMapping("api/auth/checkout")
 public class UserController {
 	
 	@Autowired UserService service;
 	
 	@PostMapping("/add/{id}")
-	@PreAuthorize("hasRole('USER')")
-	public ResponseEntity<?> addToLibrary(@PathVariable Long id, @RequestBody List<Videogioco> carrello){
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<?> addToLibrary(@PathVariable Long id, @RequestBody List<Videogioco> videogiochi){
 		try {
-			return new ResponseEntity<>(service.addVideogiocoToList(carrello, id), HttpStatus.OK);
+			return new ResponseEntity<>(service.addVideogiochiToList(videogiochi, id), HttpStatus.OK);
+			
+		} catch (Exception e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@PostMapping("/add-one/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<?> addToLibrary(@PathVariable Long id, @RequestBody Videogioco vg){
+		try {
+			return new ResponseEntity<>(service.addVideogiocoSingolo(vg, id), HttpStatus.OK);
+			
+		} catch (Exception e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@GetMapping("/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<?> findUser(@PathVariable Long id){
+		try {
+			return new ResponseEntity<>(service.getUsernameFromId(id), HttpStatus.OK);
 			
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);

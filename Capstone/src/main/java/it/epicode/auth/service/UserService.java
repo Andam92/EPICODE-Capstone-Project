@@ -17,12 +17,30 @@ public class UserService {
 	@Autowired UserRepository userRepo;
 	@Autowired VideogiocoRepository videogiocoRepo;
 	
-	public String addVideogiocoToList(List<Videogioco> carrello, Long id){
+	public String addVideogiochiToList(List<Videogioco> videogiochi, Long id){
 		User u = userRepo.findById(id).get();
-		u.getLibreriaPersonale().addAll(carrello);
+		u.getLibreriaPersonale().addAll(videogiochi);
 		userRepo.save(u);
 		return "Videogiochi aggiunti alla libreria";		
 	}
+	
+	public String addVideogiocoSingolo(Videogioco vg, Long id){
+		User u = userRepo.findById(id).get();
+		u.getLibreriaPersonale().add(vg);
+		userRepo.save(u);
+		return "Videogioco aggiunti alla libreria";		
+	}
+	
+//	public String addVideogiocoSingolo(Videogioco vg, String username){
+//		User u = userRepo.findByUsername(username);
+//		u.getLibreriaPersonale().add(vg);
+//		userRepo.save(u);
+//		return "Videogioco aggiunti alla libreria";		
+//	}
+	
+	public User getUsernameFromId(Long id){
+	       return  userRepo.findById(id).get();
+	    }
 	
 	public List<User> findAll(){
 		if(userRepo.findAll().size() > 0) {
@@ -37,7 +55,7 @@ public class UserService {
 		if(!userRepo.existsByUsername(username)) {
 			throw new EntityNotFoundException("Nessun utente con questo username");
 			} 				
-			 return userRepo.findByUsername(username).get();
+			 return userRepo.findByUsername(username);
 			}
 	}
 

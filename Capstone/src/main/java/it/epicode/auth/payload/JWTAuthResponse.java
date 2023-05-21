@@ -10,7 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class JWTAuthResponse {
-	private Long id;
 	private String username;
     private String accessToken;
     private String tokenType = "Bearer";
