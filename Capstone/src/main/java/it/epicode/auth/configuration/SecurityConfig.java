@@ -55,32 +55,14 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
     }
-    
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
-        configuration.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization"));
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    	
-    	http.cors().configurationSource(corsConfigurationSource())
-    	.and()
-    	.csrf().disable().
-        authorizeHttpRequests((authorize) -> authorize
- //       		.requestMatchers(HttpMethod.GET, "/api/**").permitAll()
-        		.requestMatchers(HttpMethod.GET, "/**").permitAll()
-        		.requestMatchers(HttpMethod.POST, "/**").permitAll()
-        		.requestMatchers(HttpMethod.PUT, "/**").permitAll()
-        		.requestMatchers(HttpMethod.DELETE, "/**").permitAll()
-                .requestMatchers("/api/auth/**").permitAll()
+
+        http.cors().and().csrf().disable()
+        .authorizeHttpRequests((authorize) -> authorize
+                .requestMatchers(HttpMethod.GET, "/api/").permitAll()
+               .requestMatchers("/api/auth/**").permitAll()
                 .anyRequest().authenticated())
         .exceptionHandling( exception -> exception
                 .authenticationEntryPoint(authenticationEntryPoint)
@@ -88,9 +70,11 @@ public class SecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         );
 
-    	http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-    	return http.build();
+        return http.build();
     }
 
 }
+
+
