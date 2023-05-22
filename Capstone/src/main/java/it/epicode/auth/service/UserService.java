@@ -1,6 +1,7 @@
 package it.epicode.auth.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,5 +58,13 @@ public class UserService {
 			} 				
 			 return userRepo.findByUsername(username);
 			}
+	
+	
+	public List<Videogioco> getLibraryById(Long id){			
+		User u = userRepo.findById(id).get();		
+		return u.getLibreriaPersonale();
+		
+	}
+	
 	}
 
