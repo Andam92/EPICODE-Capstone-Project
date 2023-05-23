@@ -27,9 +27,9 @@ public class UserController {
 	
 	@PostMapping("/add/{id}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-	public ResponseEntity<?> addToLibrary(@PathVariable Long id, @RequestBody List<Videogioco> videogiochi){
+	public ResponseEntity<?> addToLibrary(@PathVariable Long id, @RequestBody List<Videogioco> vg){
 		try {
-			return new ResponseEntity<>(service.addVideogiochiToList(videogiochi, id), HttpStatus.OK);
+			return new ResponseEntity<>(service.addVideogiochiToList(vg, id), HttpStatus.OK);
 			
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);

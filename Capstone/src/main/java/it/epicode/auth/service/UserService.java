@@ -18,18 +18,18 @@ public class UserService {
 	@Autowired UserRepository userRepo;
 	@Autowired VideogiocoRepository videogiocoRepo;
 	
-	public String addVideogiochiToList(List<Videogioco> videogiochi, Long id){
+	public List<Videogioco> addVideogiochiToList(List<Videogioco> videogiochi, Long id){
 		User u = userRepo.findById(id).get();
 		u.getLibreriaPersonale().addAll(videogiochi);
 		userRepo.save(u);
-		return "Videogiochi aggiunti alla libreria";		
+		return videogiochi;		
 	}
 	
-	public String addVideogiocoSingolo(Videogioco vg, Long id){
+	public Videogioco addVideogiocoSingolo(Videogioco vg, Long id){
 		User u = userRepo.findById(id).get();
 		u.getLibreriaPersonale().add(vg);
 		userRepo.save(u);
-		return "Videogioco aggiunti alla libreria";		
+		return vg;		
 	}
 	
 //	public String addVideogiocoSingolo(Videogioco vg, String username){
