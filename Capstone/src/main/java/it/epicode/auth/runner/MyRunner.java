@@ -24,35 +24,61 @@ public class MyRunner implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 
 		// Creo videogiochi
-		Videogioco God_of_War = config.creaVideogioco("God of War", "https://drive.google.com/u/0/uc?id=1LhTcPJ-K9Fetro3gIPwAQpwiETgzjTgk", Categoria.NARRATIVO, "PlayStation", "SantaMonica",
-				LocalDate.of(2022, 1, 14), 59.99);
-		Videogioco Spider_Man = config.creaVideogioco("Marvel's Spider-Man", "https://drive.google.com/u/0/uc?id=14cr4fD05jAWM3ISVsP5p-4-c8HdCjEBK", Categoria.AZIONE, "PlayStation",
-				"InsomniacGames", LocalDate.of(2022, 8, 12), 59.99);
-		Videogioco Deep_Rock_Galactic = config.creaVideogioco("Deep Rock Galactic", "https://drive.google.com/u/0/uc?id=1WHlTQAICu4Ge7WBHbPYNpjfO53-2DXdr", Categoria.FPS,
-				"Coffee Stain Publishing", "Ghost Ship Games", LocalDate.of(2020, 05, 13), 29.99);
-		Videogioco Total_War_Warhammer_3 = config.creaVideogioco("Total War: WARHAMMER III", "https://drive.google.com/u/0/uc?id=1kxCpUR1Rl7KwgFDn1V3bs3YmTMf6nJLZ", Categoria.STRATEGIA,
-				"SEGA", "Creative Assembly", LocalDate.of(2022, 2, 17), 59.99);
-		Videogioco Among_Us = config.creaVideogioco("Among Us", "https://drive.google.com/u/0/uc?id=1jPu6damkHYGoHuMaXlTfEYP-qOv99816", Categoria.MULTIPLAYER, "Innersloth", "Innersloth",
-				LocalDate.of(2018, 11, 16), 4.49);
-		Videogioco The_Last_of_Us = config.creaVideogioco("The Last of Us", "https://drive.google.com/u/0/uc?id=1Wqp257Af3BfMt56KpVf5mq8tXJdD3NHT", Categoria.NARRATIVO, "PlayStation", "Naughty Dog",
-				LocalDate.of(2023, 3, 28), 59.99);
-		Videogioco NBA_2K23 = config.creaVideogioco("NBA 2K23", "https://drive.google.com/u/0/uc?id=1cM9Mg9o8JT6Un52F_UFP2kbMpuSkHcWA", Categoria.SPORT, "2K", "Visual Concepts",
-				LocalDate.of(2022, 9, 8), 59.99);
-		Videogioco Mount_Blade_Bannerlord = config.creaVideogioco("Mount&Blade: Bannerlord", "https://drive.google.com/u/0/uc?id=1AN4m5qNIYmomIvNbiGi-f23TOieV0mxM", Categoria.RPG, "TaleWorlds Entertainment", "TaleWorlds Entertainment",
-				LocalDate.of(2022, 10, 25), 49.99);
-		Videogioco Outer_Wilds = config.creaVideogioco("Outer Wilds", "https://drive.google.com/u/0/uc?id=1ihX2NbsYCzaJCnPqllHyG_pUaeND6TxC", Categoria.NARRATIVO, "Annapurna", "Mobius Digital",
-				LocalDate.of(2020, 6, 18), 22.99);
-		Videogioco Kingdom_Come = config.creaVideogioco("Kingdome Come", "https://drive.google.com/u/0/uc?id=1Sn2a_Q4wTHxO00jkuhODG8OmdkXd4kKg", Categoria.RPG, "Warhorse Studios", "Warhorse Studios ",
-				LocalDate.of(2018, 2, 18), 29.99);
-		Videogioco Hogwarts_Legacy = config.creaVideogioco("Hogwarts Legacy", "https://drive.google.com/u/0/uc?id=1UHSLx2zqnPfQx62l0pk-ikjZu849-CLa", Categoria.RPG, "Warner Bros. Games", 
-				"Avalanche Software ",
-				LocalDate.of(2023, 2, 10), 59.99);
-		
-		
+		Videogioco God_of_War = config.creaVideogioco("God of War",
+				"https://drive.google.com/u/0/uc?id=1LhTcPJ-K9Fetro3gIPwAQpwiETgzjTgk", Categoria.NARRATIVO,
+				"PlayStation", "SantaMonica", LocalDate.of(2022, 1, 14), 59.99, "Lasciatosi alle spalle la sua sete di vendetta verso gli dèi dell'Olimpo, Kratos ora vive nella terra delle divinità e dei mostri norreni. È in questo mondo ostile e spietato che dovrà combattere per la sopravvivenza e insegnare a suo figlio a fare lo stesso.");
+		Videogioco Spider_Man = config.creaVideogioco("Marvel's Spider-Man",
+				"https://drive.google.com/u/0/uc?id=14cr4fD05jAWM3ISVsP5p-4-c8HdCjEBK", Categoria.AZIONE, "PlayStation",
+				"InsomniacGames", LocalDate.of(2022, 8, 12), 59.99, "La vita di Peter Parker e quella di Spider-Man entrano in collisione in una storia originale. Gioca nel ruolo di un Peter Parker ormai esperto, impegnato a combattere i supercriminali della New York Marvel. Lanciati attraverso quartieri colmi di vita sconfiggendo i nemici con eliminazioni epiche.");
+		Videogioco Deep_Rock_Galactic = config.creaVideogioco("Deep Rock Galactic",
+				"https://drive.google.com/u/0/uc?id=1WHlTQAICu4Ge7WBHbPYNpjfO53-2DXdr", Categoria.FPS,
+				"Coffee Stain Publishing", "Ghost Ship Games", LocalDate.of(2020, 05, 13), 29.99, "Deep Rock Galactic è un FPS fantascientifico cooperativo con tostissimi nani spaziali, ambienti distruttibili al 100%, grotte generate proceduralmente e orde infinite di mostri alieni.");
+		Videogioco Total_War_Warhammer_3 = config.creaVideogioco("Total War: WARHAMMER III",
+				"https://drive.google.com/u/0/uc?id=1kxCpUR1Rl7KwgFDn1V3bs3YmTMf6nJLZ", Categoria.STRATEGIA, "SEGA",
+				"Creative Assembly", LocalDate.of(2022, 2, 17), 59.99, "La cataclismica conclusione della trilogia di Total War: WARHAMMER è qui. Riunisci i tuoi eserciti e addentrati nel Regno del Caos, una dimensione di orrori indicibili dove il destino del mondo sarà deciso una volta per tutte. Sconfiggerai i tuoi demoni?… oppure li comanderai?");
+		Videogioco Among_Us = config.creaVideogioco("Among Us",
+				"https://drive.google.com/u/0/uc?id=1jPu6damkHYGoHuMaXlTfEYP-qOv99816", Categoria.MULTIPLAYER,
+				"Innersloth", "Innersloth", LocalDate.of(2018, 11, 16), 4.49, "Uno spaziale party game di collaborazione e tradimenti per 4-15 giocatori, da giocare in locale oppure online.");
+		Videogioco The_Last_of_Us = config.creaVideogioco("The Last of Us",
+				"https://drive.google.com/u/0/uc?id=1Wqp257Af3BfMt56KpVf5mq8tXJdD3NHT", Categoria.NARRATIVO,
+				"PlayStation", "Naughty Dog", LocalDate.of(2023, 3, 28), 59.99, "Riscopri la straordinaria narrazione e gli indimenticabili personaggi di The Last of Us™, vincitore di oltre 200 premi come Gioco dell'anno.");
+		Videogioco NBA_2K23 = config.creaVideogioco("NBA 2K23",
+				"https://drive.google.com/u/0/uc?id=1cM9Mg9o8JT6Un52F_UFP2kbMpuSkHcWA", Categoria.SPORT, "2K",
+				"Visual Concepts", LocalDate.of(2022, 9, 8), 59.99, "Raccogli la sfida in NBA 2K23. Sfodera il tuo talento in MyCAREER. Metti insieme le All-Star con le leggende del passato in MyTEAM. Costruisci la tua eredità in MyGM o porta la NBA verso una nuova direzione in modalità MyLEAGUE.");
+		Videogioco Mount_Blade_Bannerlord = config.creaVideogioco("Mount&Blade: Bannerlord",
+				"https://drive.google.com/u/0/uc?id=1AN4m5qNIYmomIvNbiGi-f23TOieV0mxM", Categoria.RPG,
+				"TaleWorlds Entertainment", "TaleWorlds Entertainment", LocalDate.of(2022, 10, 25), 49.99, "RPG di strategia/azione. Crea un personaggio, stabilisci contatti diplomatici, forgia, commercia e conquista territori in un vasto mondo medievale. Forma eserciti e lotta al fianco delle tue truppe in vaste battaglie in tempo reale che sfruttano un sistema di combattimento complesso e intuitivo.");
+		Videogioco Outer_Wilds = config.creaVideogioco("Outer Wilds",
+				"https://drive.google.com/u/0/uc?id=1ihX2NbsYCzaJCnPqllHyG_pUaeND6TxC", Categoria.NARRATIVO,
+				"Annapurna", "Mobius Digital", LocalDate.of(2020, 6, 18), 22.99, "Titolo dell'anno 2019 per Giant Bomb, Polygon, Eurogamer e The Guardian, l'acclamato Outer Wilds è un gioco open world ambientato in un sistema solare intrappolato in un anello temporale senza fine.");
+		Videogioco Kingdom_Come = config.creaVideogioco("Kingdome Come Deliverance",
+				"https://drive.google.com/u/0/uc?id=1Sn2a_Q4wTHxO00jkuhODG8OmdkXd4kKg", Categoria.RPG,
+				"Warhorse Studios", "Warhorse Studios ", LocalDate.of(2018, 2, 18), 29.99, "Kingdom Come: Deliverance è un gioco di ruolo open world con un’appassionante storia che ti farà vivere un’epica avventura nel Sacro Romano Impero. Vendica la morte dei tuoi genitori, respingi gli invasori del regno e influenza gli eventi con le tue scelte.");
+		Videogioco Hogwarts_Legacy = config.creaVideogioco("Hogwarts Legacy",
+				"https://drive.google.com/u/0/uc?id=1UHSLx2zqnPfQx62l0pk-ikjZu849-CLa", Categoria.RPG,
+				"Warner Bros. Games", "Avalanche Software ", LocalDate.of(2023, 2, 10), 59.99, "Hogwarts Legacy è un coinvolgente gioco di ruolo d'azione open world. Prendi il controllo dell'azione e crea un'avventura tutta tua.");
+		Videogioco We_Were_Here_Forever = config.creaVideogioco("We were here forever",
+				"https://drive.google.com/u/0/uc?id=1foRKGhy1DWE0CDKUlDPSWkTIrpPPM8m9", Categoria.ROMPICAPO,
+				"Total Mayhem Games", "Total Mayhem Games", LocalDate.of(2022, 5, 10), 17.99, "Ti risvegli imprigionato all'interno del sinistro Castle Rock: sei stato tradito o semplicemente non sei stato astuto? Scoprilo nella nuova avventura rompicapo coop della serie We Were Here! Riuscirai ad affrontare le oscure forze di questo regno o rimarrai intrappolato... per sempre?");
+		Videogioco Dorf_Romantik = config.creaVideogioco("Dorf Romantik",
+				"https://drive.google.com/u/0/uc?id=1vIB7UUuIIHYVIM6yy_Nmjw83qPgc6TlY", Categoria.ROMPICAPO,
+				"Toukana Interactive", "Toukana Interactive", LocalDate.of(2022, 4, 28), 12.99, "Dorfromantik è un tranquillo gioco di costruzioni in cui si piazzano tegole esagonali per creare un paesaggio di villaggio in continua crescita. Esplora una varietà di biomi colorati, sblocca nuovi componenti e completa le missioni per dare vita al tuo mondo di gioco!");
+		Videogioco Escape_Simulator = config.creaVideogioco("Escape Simulator",
+				"https://drive.google.com/u/0/uc?id=1OqxHostTEvkQX9RHpiG_vYZye2dDzyGg", Categoria.ROMPICAPO,
+				"Pine Studio", "Pine Studio", LocalDate.of(2021, 10,19), 14.99, "Rompicapo in prima persona che puoi giocare da solo o in co-op online (2-3 giocatori consigliati). Esplora una serie di escape room altamente interattive. Sposta mobili, raccogli ed esamina di tutto, spacca vasi e rompi serrature! Supporta le stanze comunità tramite l'editor di livelli.");
+		Videogioco House_of_Davinci = config.creaVideogioco("The House of Davinci",
+				"https://drive.google.com/u/0/uc?id=1zHf9w8lZRtaWw5_qUKqi2HzJpBCy97kQ", Categoria.ROMPICAPO,
+				"Blue Brain Games", "Blue Brain Games", LocalDate.of(2022, 12,23), 19.99, "Il gran finale della trilogia di The House of Da Vinci è finalmente disponibile! Risolvi tanti enigmi e rompicapo ed esplora nuove favolose locazioni di incredibile bellezza.");
+		Videogioco Inscryption = config.creaVideogioco("Inscryption",
+				"https://drive.google.com/u/0/uc?id=1AUR_5XbNqH0W7HrDbQVWnLOcTN0_rOLh", Categoria.ROMPICAPO,
+				"Devolver Digital", "Daniel Mullins Games", LocalDate.of(2021, 10,19), 19.99, "Inscryption è un'odissea fatta di cupe carte dark che fonde un roguelike deckbuilder, enigmi in stile escape-room e l'horror psicologico in un frullato di sangue. Ancora più oscuri sono i segreti iscritti sulle carte...");
+		Videogioco Terrascape = config.creaVideogioco("Terrascape",
+				"https://drive.google.com/u/0/uc?id=1x0xY8Tdl_31aknGl4d-fsfvdjmt6bPU8", Categoria.ROMPICAPO,
+				"Toplitz Productions", "Bitfall Studios", LocalDate.of(2023, 4,5), 12.99, "In TerraScape costruirai la città dei tuoi sogni. Ogni pacchetto di carte di TerraScape offre una varietà di metodi e strutture per ampliare il tuo regno. Posiziona le carte con attenzione nel mondo virtuale per ottenere punti e ricevere nuove carte in ricompensa!");
 		
 
-		// Salvo nel db		
-		if(service.findAll().size() == 0) {			
+		// Salvo nel db
+		if (service.findAll().size() == 0) {
 			service.addVideogioco(God_of_War);
 			service.addVideogioco(Spider_Man);
 			service.addVideogioco(Deep_Rock_Galactic);
@@ -64,12 +90,15 @@ public class MyRunner implements ApplicationRunner {
 			service.addVideogioco(Outer_Wilds);
 			service.addVideogioco(Kingdom_Come);
 			service.addVideogioco(Hogwarts_Legacy);
+			service.addVideogioco(We_Were_Here_Forever);
+			service.addVideogioco(Dorf_Romantik);
+			service.addVideogioco(Escape_Simulator);
+			service.addVideogioco(House_of_Davinci);
+			service.addVideogioco(Inscryption);
+			service.addVideogioco(Terrascape);
+			
 		}
-		
+
 	}
-	
-	
-		
-	
 
 }

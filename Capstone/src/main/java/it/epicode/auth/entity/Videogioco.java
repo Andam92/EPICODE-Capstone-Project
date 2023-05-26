@@ -34,9 +34,10 @@ public class Videogioco {
 	private String casaProduzione;
 	LocalDate dataPubblicazione;
 	Double prezzo;
+	String descrizione;
 		
 	public Videogioco(String titolo, String immagine, Categoria categoria, String editore, String casaProduzione,
-			LocalDate dataPubblicazione, Double prezzo) {
+			LocalDate dataPubblicazione, Double prezzo, String descrizione) {
 		super();
 		this.titolo = titolo;
 		this.immagine = immagine;
@@ -45,6 +46,7 @@ public class Videogioco {
 		this.casaProduzione = casaProduzione;
 		this.dataPubblicazione = dataPubblicazione;
 		this.prezzo = prezzo;
+		this.descrizione = descrizione;
 	}
 	
 	
