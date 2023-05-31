@@ -44,5 +44,16 @@ public class NewController {
 				return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 			}
 		}
+	 
+	 @PostMapping("/gift/{username}")
+	 @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+		public ResponseEntity<?> giftAllToLibrary(@PathVariable String username, @RequestBody List<Videogioco> vg ){
+			try {
+				return new ResponseEntity<>(userService.giftVideogiochiToList(vg, username), HttpStatus.OK);
+				
+			} catch (Exception e) {
+				return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+			}
+		}
 
 }

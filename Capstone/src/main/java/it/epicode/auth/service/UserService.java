@@ -3,6 +3,7 @@ package it.epicode.auth.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.metamodel.mapping.EntityAssociationMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import it.epicode.auth.entity.User;
 import it.epicode.auth.entity.Videogioco;
 import it.epicode.auth.repository.UserRepository;
 import it.epicode.auth.repository.VideogiocoRepository;
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
@@ -32,12 +34,19 @@ public class UserService {
 		return vg;		
 	}
 	
-//	public String addVideogiocoSingolo(Videogioco vg, String username){
-//		User u = userRepo.findByUsername(username);
-//		u.getLibreriaPersonale().add(vg);
-//		userRepo.save(u);
-//		return "Videogioco aggiunti alla libreria";		
-//	}
+	public List<Videogioco> giftVideogiochiToList(List<Videogioco> videogiochi, String username){
+		User u = userRepo.findByUsername(username);
+		List <Videogioco> libreria = u.getLibreriaPersonale();
+		for(Videogioco videogioco : videogiochi) {
+			if(!libreria.contains(videogioco)) {
+				libreria.add(videogioco);
+			} else throw new EntityExistsException("Gioco già presente in libreria");
+		}
+//		libreria.addAll(videogiochi);
+		userRepo.save(u);
+		return videogiochi;		
+	}
+	
 	
 	public User getUsernameFromId(Long id){
 	       return  userRepo.findById(id).get();
