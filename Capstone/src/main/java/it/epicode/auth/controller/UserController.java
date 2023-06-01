@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.epicode.auth.entity.User;
 import it.epicode.auth.entity.Videogioco;
 import it.epicode.auth.service.UserService;
 
@@ -63,6 +64,19 @@ public class UserController {
 	public ResponseEntity<?> findByUsername(@PathVariable String username){
 		try {
 			return new ResponseEntity<>(service.findByUsername(username), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@PutMapping("/edit/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<?> editUser( @RequestBody User user, @PathVariable Long id){
+		user.setId(id);
+		User editedUser = service.getUsernameFromId(id);
+		user.setPassword(editedUser.getPassword());
+		try {
+			return new ResponseEntity<>(service.editUser(user), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}

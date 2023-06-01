@@ -46,7 +46,7 @@ public class UserService {
 		userRepo.save(u);
 		return videogiochi;		
 	}
-	
+
 	
 	public User getUsernameFromId(Long id){
 	       return  userRepo.findById(id).get();
@@ -72,6 +72,15 @@ public class UserService {
 	public List<Videogioco> getLibraryById(Long id){			
 		User u = userRepo.findById(id).get();		
 		return u.getLibreriaPersonale();
+		
+	}
+	
+	public User editUser(User user) {
+//		User user = userRepo.findById(user.getId()).get();
+		if(!userRepo.existsById(user.getId())) {
+			throw new EntityNotFoundException("Nessun utente trovato");
+		}
+		return userRepo.save(user);
 		
 	}
 	
