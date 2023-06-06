@@ -24,7 +24,6 @@ public class UserConfig {
 		c.setUsername(fake.name().username());
 		c.setPassword("qwerty");
 		c.setEmail(c.getUsername() + "@example.com");
-
 		return c;
 
 	}

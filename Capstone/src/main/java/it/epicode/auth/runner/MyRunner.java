@@ -136,9 +136,7 @@ public class MyRunner implements ApplicationRunner {
 				"https://drive.google.com/u/0/uc?id=1bihIbOaTbbUko1xtWIjBmEQJg5qjyO0L", Categoria.FPS,
 				 "Prime Matter", "Nightdive Studios", LocalDate.of(2023, 5, 23), 39.99, "Carica la tua Boltgun e scatenati col tuo arsenale da Space Marine in un tripudio di esplosioni, sprite, pixel e sangue in questa perfetta miscela tra l'azione frenetica di Warhammer 40.000 e l'elegante stile retrò degli sparatutto anni '90.");
 
-		
-		
-		
+				
 
 		// Salvo nel db
 		if (service.findAll().size() == 0) {

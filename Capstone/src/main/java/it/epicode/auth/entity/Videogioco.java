@@ -3,6 +3,7 @@ package it.epicode.auth.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -34,6 +35,7 @@ public class Videogioco {
 	private String casaProduzione;
 	LocalDate dataPubblicazione;
 	Double prezzo;
+	@Column(length = 10000)
 	String descrizione;
 		
 	public Videogioco(String titolo, String immagine, Categoria categoria, String editore, String casaProduzione,
